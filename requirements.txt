@@ -1,0 +1,4 @@
+Keras==2.2.0
+spacy==2.0.11
+textacy==0.6.1
+tensorflow==1.8.0

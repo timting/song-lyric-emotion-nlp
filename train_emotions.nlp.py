@@ -42,7 +42,7 @@ def main():
             rows += 1
 
     num_features = len(training_labels[0])
-    num_classes = 7
+    num_classes = len(labels)
 
     model = get_model((num_features, rows), num_classes)
     model.compile(optimizer='rmsprop',

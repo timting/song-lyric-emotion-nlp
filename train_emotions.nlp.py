@@ -21,8 +21,8 @@ def get_model(input_shape, num_classes):
 
 def main():
     parser = argparse.ArgumentParser(description="emotions multi-classifier trianer")
-    parser.add_argument("--input", type=str, "Input csv file")
-    parser.add_argument("--output", type=str, "Output model file")
+    parser.add_argument("--input INPUT", type=str, help="Input csv file")
+    parser.add_argument("--output OUTPUT", type=str, help="Output model file")
     args = parser.parse_args()
 
     training_data = []

@@ -22,9 +22,9 @@ with open('isear-noa.csv') as csvfile:
 # Find uni/bi-grams in each passage
 docs = [nlp(s) for s in all_sentences]
 unigrams = [list(textacy.extract.ngrams(d, 1, filter_stops=True, filter_punct=True, filter_nums=True)) for d in docs]
-unigrams = set([item.text for sublist in unigrams for item in sublist])
+unigrams = set([item.text.lower() for sublist in unigrams for item in sublist])
 bigrams = [list(textacy.extract.ngrams(d, 2, filter_stops=True, filter_punct=True, filter_nums=True)) for d in docs]
-bigrams = set([item.text for sublist in bigrams for item in sublist])
+bigrams = set([item.text.lower() for sublist in bigrams for item in sublist])
 
 # Write uni/bi-grams, carriage return separated, into grams.txt
 with open('grams.txt', 'w+') as f:

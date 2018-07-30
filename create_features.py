@@ -4,6 +4,16 @@ import csv
 
 features = []
 
+emotions_to_int = {
+    "joy": 0,
+    "fear": 1,
+    "anger": 2,
+    "sadness": 3,
+    "disgust": 4,
+    "shame": 5,
+    "guilt": 6
+}
+
 with open('grams.txt') as columns:
     readFeatures = csv.reader(columns)
     for row in readFeatures:
@@ -24,6 +34,6 @@ with open('isear-noa.csv') as rows:
                 text = row[-3]
                 label = row[36]
                 result_row = [0 if feature not in text else 1 for feature in features]
-                result_row.append(label)
+                result_row.append(emotions_to_int[label])
 
             writer.writerow(result_row)
